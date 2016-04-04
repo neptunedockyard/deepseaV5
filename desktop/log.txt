@@ -1,0 +1,1 @@
+BOOT : Game entry pointINFO : resizing screenINFO : loading assetsINFO : assets loadedINFO : creating cameraINFO : creating camera controllerINFO : creating lightsINFO : creating worldINFO : shapecontroller loadedINFO : sphere createdINFO : creating environmentINFO : creating soundsINFO : creating otherINFO : resizing window

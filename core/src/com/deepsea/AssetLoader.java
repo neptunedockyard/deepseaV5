@@ -9,7 +9,7 @@ public class AssetLoader {
 		
 		
 		
-		Gdx.app.log("INFO", "assets loaded");
+		Game.writeLogs("INFO", "assets loaded");
 	}
 
 }

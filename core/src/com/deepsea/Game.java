@@ -3,6 +3,7 @@ package com.deepsea;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Graphics.DisplayMode;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.Environment;
@@ -16,6 +17,9 @@ public class Game extends ApplicationAdapter {
 	public PerspectiveCamera cam;
 	public FirstPersonCameraController camCon;
 	public AssetLoader assetLoader;
+	
+	//files and logging
+	public static FileHandle logFile;
 	
 	//environment
 	public Environment ambient;
@@ -33,16 +37,17 @@ public class Game extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		Gdx.app.log("BOOT", "Game entry point");
+		logFile = Gdx.files.local("log.txt");
+		writeLogs("BOOT", "Game entry point");
 		
-		Gdx.app.log("INFO", "resizing screen");
+		writeLogs("INFO", "resizing screen");
 		Gdx.graphics.setWindowedMode(xwidth, xheight);
 		Gdx.graphics.setVSync(xvsync);
 		
-		Gdx.app.log("INFO", "loading assets");
+		writeLogs("INFO", "loading assets");
 		assetLoader = new AssetLoader(gamePXbits);
 		
-		Gdx.app.log("INFO", "creating camera");
+		writeLogs("INFO", "creating camera");
 		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		cam.position.set(0, 0, 0);
 		cam.lookAt(0, 0, 0);
@@ -50,24 +55,25 @@ public class Game extends ApplicationAdapter {
 		cam.far = 100f;
 		cam.update();
 		
-		Gdx.app.log("INFO", "creating camera controller");
+		writeLogs("INFO", "creating camera controller");
 		camCon = new FirstPersonCameraController(cam);
 		Gdx.input.setInputProcessor(camCon);
 		
-		Gdx.app.log("INFO", "creating lights");
+		writeLogs("INFO", "creating lights");
 		ambient = new Environment();
 		ambient.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
 		ambient.add(new DirectionalLight().set(1, 1, 1, 0, -1, 0));
 		
-		Gdx.app.log("INFO", "creating world");
+		writeLogs("INFO", "creating world");
 		shapeController = new ShapeController(cam, ambient);
 		shapeController.createSphere();
 		
-		Gdx.app.log("INFO", "creating environment");
+		writeLogs("INFO", "creating environment");
 		
-		Gdx.app.log("INFO", "creating sounds");
+		writeLogs("INFO", "creating sounds");
 		
-		Gdx.app.log("INFO", "creating other");
+		writeLogs("INFO", "creating other");
+		
 	}
 
 	@Override
@@ -82,11 +88,13 @@ public class Game extends ApplicationAdapter {
 		
 		cam.update();
 		camCon.update();
+		
+		
 	}
 
 	@Override
 	public void resize(int width, int height) {
-		Gdx.app.log("INFO", "resizing window");
+		writeLogs("INFO", "resizing window");
 		cam.viewportWidth = width;
 		cam.viewportHeight = height;
 		cam.update();
@@ -94,8 +102,13 @@ public class Game extends ApplicationAdapter {
 	
 	@Override
 	public void dispose() {
-		Gdx.app.log("INFO", "disposing objects");
+		writeLogs("INFO", "disposing objects");
 		
+	}
+	
+	public static void writeLogs(String tag, String log) {
+		Gdx.app.log(tag, log);
+		logFile.writeString(tag + " : " + log + "\n", true);
 	}
 
 }

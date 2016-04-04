@@ -34,14 +34,14 @@ public class ShapeController {
 		Model grid = modelBuilder.createLineGrid(10, 10, 500, 500, new Material(ColorAttribute.createDiffuse(Color.RED)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 		instances.add(new ModelInstance(grid, 0, 0, 0));
 		
-		Gdx.app.log("INFO", "shapecontroller loaded");
+		Game.writeLogs("INFO", "shapecontroller loaded");
 	}
 	
 	public void createSphere() {
 		Model sphere = modelBuilder.createSphere(10f, 10f, 10f, 16, 16, new Material(ColorAttribute.createDiffuse(Color.BLUE)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 		instances.add(new ModelInstance(sphere, 10f, 10f, 10f));
 		
-		Gdx.app.log("INFO", "sphere created");
+		Game.writeLogs("INFO", "sphere created");
 	}
 	
 	public void render() {
