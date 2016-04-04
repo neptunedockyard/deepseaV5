@@ -61,6 +61,7 @@ public class Game extends ApplicationAdapter {
 		
 		Gdx.app.log("INFO", "creating world");
 		shapeController = new ShapeController(cam, ambient);
+		shapeController.createSphere();
 		
 		Gdx.app.log("INFO", "creating environment");
 		
@@ -73,7 +74,7 @@ public class Game extends ApplicationAdapter {
 	public void render () {
 		Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		//clear screen
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 		
 		//various renderers
