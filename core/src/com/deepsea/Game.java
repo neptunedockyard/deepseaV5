@@ -2,90 +2,90 @@ package com.deepsea;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.Graphics.DisplayMode;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
-import com.badlogic.gdx.graphics.VertexAttributes.Usage;
 import com.badlogic.gdx.graphics.g3d.Environment;
-import com.badlogic.gdx.graphics.g3d.Material;
-import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelBatch;
-import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController;
-import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.utils.Array;
 
 public class Game extends ApplicationAdapter {
 
 	//controllers
 	public PerspectiveCamera cam;
 	public FirstPersonCameraController camCon;
-	public ModelBuilder modelBuilder;
-	public Model model;
-	public ModelBatch modelBatch;
-	public Array<ModelInstance> instances = new Array<ModelInstance>();
-	public ModelInstance modInstance;
-	public Model grid;
-	public ModelInstance gridInstance;
+	public AssetLoader assetLoader;
 	
 	//environment
-	public Environment lights;
+	public Environment ambient;
 	
+	
+	//workers
+	public ShapeController shapeController;
 	
 	//game vars
-	
+	private int gamePXbits = 32;
+	private int xwidth = 1024;
+	private int xheight = 768;
+	private boolean xfullscreen = false;
+	private boolean xvsync = false;
 	
 	@Override
 	public void create () {
-		//create the camera
+		Gdx.app.log("BOOT", "Game entry point");
+		
+		Gdx.app.log("INFO", "resizing screen");
+		Gdx.graphics.setWindowedMode(xwidth, xheight);
+		Gdx.graphics.setVSync(xvsync);
+		
+		Gdx.app.log("INFO", "loading assets");
+		assetLoader = new AssetLoader(gamePXbits);
+		
+		Gdx.app.log("INFO", "creating camera");
 		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		cam.near = 0.5f;
-		cam.far = 1000f;
-		cam.position.set(0,0,3);
-		cam.lookAt(0,0,0);
+		cam.position.set(0, 0, 0);
+		cam.lookAt(0, 0, 0);
+		cam.near = 1f;
+		cam.far = 100f;
 		cam.update();
 		
-		//create the camera controller and input
+		Gdx.app.log("INFO", "creating camera controller");
 		camCon = new FirstPersonCameraController(cam);
 		Gdx.input.setInputProcessor(camCon);
 		
-		//create lights
-		lights = new Environment();
-		lights.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
-		lights.add(new DirectionalLight().set(1, 1, 1, 0, -1, 0));
+		Gdx.app.log("INFO", "creating lights");
+		ambient = new Environment();
+		ambient.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
+		ambient.add(new DirectionalLight().set(1, 1, 1, 0, -1, 0));
 		
-		//create models
-		modelBuilder = new ModelBuilder();
-		model = modelBuilder.createSphere(2f, 2f, 2f, 20, 20, new Material(ColorAttribute.createDiffuse(Color.BLUE)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
-		grid = modelBuilder.createLineGrid(10, 10, 100, 100, new Material(ColorAttribute.createDiffuse(Color.RED)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
-		modInstance = new ModelInstance(model, 10, 10, 10);
-		gridInstance = new ModelInstance(grid, 10, 10, 10);
-		modelBatch = new ModelBatch();
+		Gdx.app.log("INFO", "creating world");
+		shapeController = new ShapeController(cam, ambient);
+		
+		Gdx.app.log("INFO", "creating environment");
+		
+		Gdx.app.log("INFO", "creating sounds");
+		
+		Gdx.app.log("INFO", "creating other");
 	}
 
 	@Override
 	public void render () {
 		Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		//clear screen
-		Gdx.gl.glClearColor(1, 1, 1, 1);
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 		
-		//cam.rotateAround(Vector3.Zero, new Vector3(0,1,0),1f);
-		cam.update();
-		//camCon.update();
+		//various renderers
+		shapeController.render();
 		
-		modelBatch.begin(cam);
-		modelBatch.render(modInstance, lights);
-		modelBatch.render(gridInstance, lights);
-		modelBatch.end();
+		cam.update();
+		camCon.update();
 	}
 
 	@Override
 	public void resize(int width, int height) {
+		Gdx.app.log("INFO", "resizing window");
 		cam.viewportWidth = width;
 		cam.viewportHeight = height;
 		cam.update();
@@ -93,8 +93,8 @@ public class Game extends ApplicationAdapter {
 	
 	@Override
 	public void dispose() {
-		model.dispose();
-		modelBatch.dispose();
+		Gdx.app.log("INFO", "disposing objects");
+		
 	}
 
 }
