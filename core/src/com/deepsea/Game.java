@@ -29,6 +29,8 @@ public class Game extends ApplicationAdapter {
 	public ModelBatch modelBatch;
 	public Array<ModelInstance> instances = new Array<ModelInstance>();
 	public ModelInstance modInstance;
+	public Model grid;
+	public ModelInstance gridInstance;
 	
 	//environment
 	public Environment lights;
@@ -42,7 +44,7 @@ public class Game extends ApplicationAdapter {
 		//create the camera
 		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		cam.near = 0.5f;
-		cam.far = 100f;
+		cam.far = 1000f;
 		cam.position.set(0,0,3);
 		cam.lookAt(0,0,0);
 		cam.update();
@@ -59,8 +61,9 @@ public class Game extends ApplicationAdapter {
 		//create models
 		modelBuilder = new ModelBuilder();
 		model = modelBuilder.createSphere(2f, 2f, 2f, 20, 20, new Material(ColorAttribute.createDiffuse(Color.BLUE)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
-		
+		grid = modelBuilder.createLineGrid(10, 10, 100, 100, new Material(ColorAttribute.createDiffuse(Color.RED)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 		modInstance = new ModelInstance(model, 10, 10, 10);
+		gridInstance = new ModelInstance(grid, 10, 10, 10);
 		modelBatch = new ModelBatch();
 	}
 
@@ -71,12 +74,13 @@ public class Game extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 		
-		cam.rotateAround(Vector3.Zero, new Vector3(0,1,0),1f);
+		//cam.rotateAround(Vector3.Zero, new Vector3(0,1,0),1f);
 		cam.update();
 		//camCon.update();
 		
 		modelBatch.begin(cam);
 		modelBatch.render(modInstance, lights);
+		modelBatch.render(gridInstance, lights);
 		modelBatch.end();
 	}
 
