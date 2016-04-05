@@ -1,6 +1,5 @@
 package com.deepsea;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.VertexAttributes.Usage;
@@ -26,6 +25,12 @@ public class ShapeController {
 	public Environment _lights;
 	
 	public ShapeController(PerspectiveCamera camera, Environment lights) {
+		/*
+		 * This method creates the shape controller object that allows the game to 
+		 * generate different models, whether they are loaded models or procedurally 
+		 * generated models.
+		 * It inherits the camera and environment objects, which are used by the renderer.
+		 */
 		this._camera = camera;
 		this._lights = lights;
 		modelBuilder = new ModelBuilder();
@@ -42,6 +47,14 @@ public class ShapeController {
 		instances.add(new ModelInstance(sphere, 10f, 10f, 10f));
 		
 		Game.writeLogs("INFO", "sphere created");
+	}
+	
+	public Model createmodSphere() {
+		/*
+		 * This method creates a sphere and hands that model to a deformer, which deforms the sphere
+		 * and then adds it to the instance pile for rendering
+		 */
+		return modelBuilder.createSphere(10f, 10f, 10f, 16, 16, new Material(ColorAttribute.createDiffuse(Color.BLUE)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 	}
 	
 	public void render() {

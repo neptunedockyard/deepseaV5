@@ -2,7 +2,6 @@ package com.deepsea;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Graphics.DisplayMode;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
@@ -19,7 +18,7 @@ public class Game extends ApplicationAdapter {
 	public AssetLoader assetLoader;
 	
 	//files and logging
-	public static FileHandle logFile;
+	public static FileHandle logFile = Gdx.files.local("log.txt");;
 	
 	//environment
 	public Environment ambient;
@@ -37,7 +36,6 @@ public class Game extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-		logFile = Gdx.files.local("log.txt");
 		writeLogs("BOOT", "Game entry point");
 		
 		writeLogs("INFO", "resizing screen");
@@ -78,18 +76,29 @@ public class Game extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		//clear screen
-		Gdx.gl.glClearColor(1, 1, 1, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
+		//prep the screen
+		screenPrepare();
 		
 		//various renderers
 		shapeController.render();
 		
+		//various updaters
 		cam.update();
 		camCon.update();
 		
 		
+	}
+	
+	public void screenPrepare() {
+		/*
+		 * This method is just for cleaning up the code in the renderer such that
+		 * only renderers and updaters are in the main render loop
+		 */
+		//set viewport
+		Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		//clear screen
+		Gdx.gl.glClearColor(1, 1, 1, 1);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 	}
 
 	@Override
