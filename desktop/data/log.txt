@@ -1,0 +1,167 @@
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : disposing objects
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : disposing objects
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects

@@ -20,7 +20,4 @@ public class Camera {
 		cam.update();
 		return cam;
 	}
-	
-	
-	
 }

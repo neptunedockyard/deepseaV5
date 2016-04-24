@@ -2,6 +2,7 @@ package com.deepsea;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
@@ -16,13 +17,14 @@ public class Game extends ApplicationAdapter {
 	public PerspectiveCamera cam;
 	public FirstPersonCameraController camCon;
 	public AssetLoader assetLoader;
+	public InputController inputCon;
 	
 	//files and logging
-	public static FileHandle logFile = Gdx.files.local("log.txt");;
+	//public static FileHandle logFile = Gdx.files.local("data/log.txt");
+	public static FileHandle logFile;
 	
 	//environment
 	public Environment ambient;
-	
 	
 	//workers
 	public ShapeController shapeController;
@@ -36,6 +38,7 @@ public class Game extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
+		logFile  = Gdx.files.local("data/log.txt");
 		writeLogs("BOOT", "Game entry point");
 		
 		writeLogs("INFO", "resizing screen");
@@ -54,8 +57,11 @@ public class Game extends ApplicationAdapter {
 		cam.update();
 		
 		writeLogs("INFO", "creating camera controller");
-		camCon = new FirstPersonCameraController(cam);
-		Gdx.input.setInputProcessor(camCon);
+		//camCon = new FirstPersonCameraController(cam);
+		inputCon = new InputController(cam);
+		//Gdx.input.setInputProcessor(camCon);
+		Gdx.input.setInputProcessor(inputCon);
+		Gdx.input.setCursorCatched(true);
 		
 		writeLogs("INFO", "creating lights");
 		ambient = new Environment();
@@ -84,9 +90,9 @@ public class Game extends ApplicationAdapter {
 		
 		//various updaters
 		cam.update();
-		camCon.update();
-		
-		
+		//camCon.update();
+		inputCon.update();
+		this.update();
 	}
 	
 	public void screenPrepare() {
@@ -100,6 +106,13 @@ public class Game extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 	}
+	
+	public void update() {
+		if(Gdx.input.isKeyPressed(Input.Keys.ESCAPE)){
+			writeLogs("INFO", "closing down everything");
+			Gdx.app.exit();
+		}
+	}
 
 	@Override
 	public void resize(int width, int height) {
@@ -112,7 +125,6 @@ public class Game extends ApplicationAdapter {
 	@Override
 	public void dispose() {
 		writeLogs("INFO", "disposing objects");
-		
 	}
 	
 	public static void writeLogs(String tag, String log) {
