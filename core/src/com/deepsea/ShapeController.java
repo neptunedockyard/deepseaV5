@@ -42,8 +42,8 @@ public class ShapeController {
 		Game.writeLogs("INFO", "shapecontroller loaded");
 	}
 	
-	public void createSphere() {
-		Model sphere = modelBuilder.createSphere(10f, 10f, 10f, 16, 16, new Material(ColorAttribute.createDiffuse(Color.BLUE)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
+	public void createSphere(float x, float y, float z, int lat, int lon) {
+		Model sphere = modelBuilder.createSphere(x, y, z, lat, lon, new Material(ColorAttribute.createDiffuse(Color.BLUE)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 		instances.add(new ModelInstance(sphere, 10f, 10f, 10f));
 		
 		Game.writeLogs("INFO", "sphere created");

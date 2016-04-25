@@ -70,7 +70,8 @@ public class Game extends ApplicationAdapter {
 		
 		writeLogs("INFO", "creating world");
 		shapeController = new ShapeController(cam, ambient);
-		shapeController.createSphere();
+		shapeController.createSphere(10f, 10f, 10f, 6, 3);
+		
 		
 		writeLogs("INFO", "creating environment");
 		
