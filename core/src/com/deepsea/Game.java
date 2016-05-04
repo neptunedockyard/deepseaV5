@@ -7,9 +7,12 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.Environment;
+import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 
 public class Game extends ApplicationAdapter {
 
@@ -20,7 +23,6 @@ public class Game extends ApplicationAdapter {
 	public InputController inputCon;
 	
 	//files and logging
-	//public static FileHandle logFile = Gdx.files.local("data/log.txt");
 	public static FileHandle logFile;
 	
 	//environment
@@ -41,6 +43,11 @@ public class Game extends ApplicationAdapter {
 		logFile  = Gdx.files.local("data/log.txt");
 		writeLogs("BOOT", "Game entry point");
 		
+		writeVars("gamePXbits: " + gamePXbits);
+		writeVars("xwidth: " + xwidth + " xheight: " + xheight);
+		writeVars("xfullscreen: " + xfullscreen);
+		writeVars("xvsync: " + xvsync);
+		
 		writeLogs("INFO", "resizing screen");
 		Gdx.graphics.setWindowedMode(xwidth, xheight);
 		Gdx.graphics.setVSync(xvsync);
@@ -49,9 +56,9 @@ public class Game extends ApplicationAdapter {
 		assetLoader = new AssetLoader(gamePXbits);
 		
 		writeLogs("INFO", "creating camera");
-		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		cam = new PerspectiveCamera(67f, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		cam.position.set(0, 0, 0);
-		cam.lookAt(0, 0, 0);
+		cam.lookAt(10, 10, 10);
 		cam.near = 1f;
 		cam.far = 100f;
 		cam.update();
@@ -69,8 +76,9 @@ public class Game extends ApplicationAdapter {
 		ambient.add(new DirectionalLight().set(1, 1, 1, 0, -1, 0));
 		
 		writeLogs("INFO", "creating world");
-		shapeController = new ShapeController(cam, ambient);
-		shapeController.createSphere(10f, 10f, 10f, 6, 3);
+		shapeController = new ShapeController(cam, ambient, 100, 100, 100);
+		Model ball = shapeController.createSphere(new Vector3(10f, 10f, 10f), new Vector2(6, 3));
+		shapeController.deformModel(ball);
 		
 		
 		writeLogs("INFO", "creating environment");
@@ -131,6 +139,11 @@ public class Game extends ApplicationAdapter {
 	public static void writeLogs(String tag, String log) {
 		Gdx.app.log(tag, log);
 		logFile.writeString(tag + " : " + log + "\n", true);
+	}
+	
+	public static void writeVars(String log) {
+		Gdx.app.log("INFO", log);
+		logFile.writeString("INFO" + " : " + log + "\n", true);
 	}
 
 }

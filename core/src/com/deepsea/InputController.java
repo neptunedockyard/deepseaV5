@@ -18,6 +18,7 @@ public class InputController extends InputAdapter {
 	private int BACKWARD = Keys.S;
 	private int UP = Keys.Q;
 	private int DOWN = Keys.E;
+	private int SHIFT = Keys.SHIFT_LEFT;
 	private int ESCAPE = Keys.ESCAPE;
 	private float velocity = 5;
 	private float degreesPerPixel = 0.5f;
@@ -82,6 +83,11 @@ public class InputController extends InputAdapter {
 	}
 	
 	public void update (float deltaTime) {
+		if (keys.containsKey(SHIFT)) {
+			velocity = 20;
+		} else {
+			velocity = 5;
+		}
 		if (keys.containsKey(FORWARD)) {
 			tmp.set(camera.direction).nor().scl(deltaTime * velocity);
 			camera.position.add(tmp);
