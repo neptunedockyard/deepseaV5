@@ -1,5 +1,8 @@
 package com.deepsea;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -37,11 +40,13 @@ public class Game extends ApplicationAdapter {
 	private int xheight = 768;
 	private boolean xfullscreen = false;
 	private boolean xvsync = false;
+	private String timeStamp;
 	
 	@Override
 	public void create () {
+		timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		logFile  = Gdx.files.local("data/log.txt");
-		writeLogs("BOOT", "Game entry point");
+		writeLogs("BOOT", "Game entry point " + timeStamp);
 		
 		writeVars("gamePXbits: " + gamePXbits);
 		writeVars("xwidth: " + xwidth + " xheight: " + xheight);

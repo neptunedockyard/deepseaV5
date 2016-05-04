@@ -513,3 +513,17 @@ INFO : creating lights
 INFO : creating world
 INFO : shapecontroller loaded
 INFO : sphere created
+BOOT : Game entry point 2016.05.03.22.32
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
