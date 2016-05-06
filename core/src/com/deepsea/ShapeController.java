@@ -3,7 +3,10 @@ package com.deepsea;
 import java.util.Iterator;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.VertexAttributes.Usage;
 import com.badlogic.gdx.graphics.g3d.Environment;
 import com.badlogic.gdx.graphics.g3d.Material;
@@ -11,6 +14,8 @@ import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
+import com.badlogic.gdx.graphics.g3d.attributes.FloatAttribute;
+import com.badlogic.gdx.graphics.g3d.utils.MeshBuilder;
 import com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Vector2;
@@ -21,7 +26,8 @@ import com.badlogic.gdx.utils.Array;
 public class ShapeController {
 
 	public ModelBuilder modelBuilder;
-	public MeshPartBuilder meshBuilder;
+	public MeshBuilder meshBuilder;
+	public MeshPartBuilder meshPartBuilder;
 	public ModelBatch modelBatch;
 	public Array<ModelInstance> instances = new Array<ModelInstance>();
 	
@@ -40,6 +46,7 @@ public class ShapeController {
 		this._lights = lights;
 		this.modelBuilder = new ModelBuilder();
 		this.modelBatch = new ModelBatch();
+		this.meshBuilder = new MeshBuilder();
 		
 		Model grid = modelBuilder.createLineGrid(world_size_x, world_size_y, 5, 5, new Material(ColorAttribute.createDiffuse(Color.RED)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 		instances.add(new ModelInstance(grid, 0, 0, 0));
@@ -56,6 +63,19 @@ public class ShapeController {
 		return sphere;
 	}
 	
+	public Model createRock(Vector3 coords, Vector2 size) {
+		modelBuilder.begin();
+		meshPartBuilder = modelBuilder.part("sphere", GL20.GL_TRIANGLES, Usage.Position | Usage.Normal, new Material(ColorAttribute.createDiffuse(Color.RED), ColorAttribute.createSpecular(1, 1, 1, 1), FloatAttribute.createShininess(8f)));
+		meshPartBuilder.sphere((float)coords.x, (float)coords.y, (float)coords.z, (int)size.x, (int)size.y);
+		Model sph = modelBuilder.end();
+		
+		instances.add(new ModelInstance(sph, (float)coords.x, (float)coords.y, (float)coords.z));
+		
+		Game.writeLogs("INFO", "rock created");
+		
+		return sph;
+	}
+	
 	public void deformModel(Model object) {
 		/*
 		 * This method creates a sphere and hands that model to a deformer, which deforms the sphere
@@ -63,10 +83,6 @@ public class ShapeController {
 		 */
 		Array<Node> nodes = object.nodes;
 		
-		for(Iterator<Node> iterator = nodes.iterator(); iterator.hasNext();) {
-			Node node = (Node) iterator.next();
-			nodes.add(node);
-		}
 		Game.writeVars("Nodes size: " + nodes.size);
 		
 		//return modelBuilder.createSphere(10f, 10f, 10f, 16, 16, new Material(ColorAttribute.createDiffuse(Color.BLUE)), Usage.Position | Usage.Normal | Usage.TextureCoordinates);

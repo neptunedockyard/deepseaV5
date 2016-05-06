@@ -82,8 +82,8 @@ public class Game extends ApplicationAdapter {
 		
 		writeLogs("INFO", "creating world");
 		shapeController = new ShapeController(cam, ambient, 100, 100, 100);
-		Model ball = shapeController.createSphere(new Vector3(10f, 10f, 10f), new Vector2(6, 3));
-		shapeController.deformModel(ball);
+		
+		Model rock = shapeController.createRock(new Vector3(10f, 10f, 10f), new Vector2(9, 6));
 		
 		
 		writeLogs("INFO", "creating environment");

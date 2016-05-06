@@ -527,3 +527,407 @@ INFO : creating lights
 INFO : creating world
 INFO : shapecontroller loaded
 INFO : sphere created
+BOOT : Game entry point 2016.05.03.22.21.17
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : sphere created
+INFO : Nodes size: 1
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.12.15.11
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.12.15.45
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.12.16.01
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.12.16.32
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.12.16.48
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.12.17.28
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.13.19.10
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.13.20.33
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.13.22.08
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.13.23.43
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+BOOT : Game entry point 2016.05.05.17.21.32
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.22.22
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.23.40
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.33.47
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.35.26
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.37.53
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.38.29
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.38.51
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.48.07
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.48.32
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.48.48
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
+BOOT : Game entry point 2016.05.05.17.49.09
+INFO : gamePXbits: 32
+INFO : xwidth: 1024 xheight: 768
+INFO : xfullscreen: false
+INFO : xvsync: false
+INFO : resizing screen
+INFO : loading assets
+INFO : assets loaded
+INFO : creating camera
+INFO : creating camera controller
+INFO : creating lights
+INFO : creating world
+INFO : shapecontroller loaded
+INFO : rock created
+INFO : creating environment
+INFO : creating sounds
+INFO : creating other
+INFO : resizing window
+INFO : resizing window
+INFO : closing down everything
+INFO : disposing objects
