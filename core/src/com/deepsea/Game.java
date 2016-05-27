@@ -84,6 +84,7 @@ public class Game extends ApplicationAdapter {
 		shapeController = new ShapeController(cam, ambient, 100, 100, 100);
 		
 		Model rock = shapeController.createRock(new Vector3(10f, 10f, 10f), new Vector2(9, 6));
+		Model rock2 = shapeController.createRock2(new Vector3(1f, 1f, 7f), new Vector2(10, 10));
 		
 		
 		writeLogs("INFO", "creating environment");

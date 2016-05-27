@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
-import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.VertexAttributes.Usage;
 import com.badlogic.gdx.graphics.g3d.Environment;
@@ -76,34 +75,6 @@ public class ShapeController {
 		Game.writeLogs("INFO", "rock created");
 		
 		return sph;
-	}
-	
-	public Model createRock2(Vector3 coords, Vector2 size) {
-		modelBuilder.begin();
-		
-		Mesh rock = new Mesh(true, 8, 8, new VertexAttribute(Usage.Position, 3, "a_position"),
-				new VertexAttribute(Usage.ColorPacked, 4, "a_color")
-				);
-		rock.setVertices(new float[] {
-				0, 0, 0, Color.toFloatBits(0, 255, 0, 255),
-				0, 1, 0, Color.toFloatBits(0, 255, 0, 255),
-				1, 0, 0, Color.toFloatBits(0, 255, 0, 255),
-				0, 0, 1, Color.toFloatBits(0, 255, 0, 255),
-				1, 1, 0, Color.toFloatBits(0, 255, 0, 255),
-				0, 1, 1, Color.toFloatBits(0, 255, 0, 255),
-				1, 0, 1, Color.toFloatBits(0, 255, 0, 255),
-				1, 1, 1, Color.toFloatBits(0, 255, 0, 255)
-		});
-		rock.setIndices(new short[] {
-				0, 1, 2, 3, 4, 5, 6, 7
-		});
-		Model mrock = modelBuilder.end();
-		
-		instances.add(new ModelInstance(mrock, (float)coords.x, (float)coords.y, (float)coords.z));
-		
-		Game.writeLogs("INFO", "rock2 created");
-		
-		return mrock;
 	}
 	
 	public void deformModel(Model object) {
